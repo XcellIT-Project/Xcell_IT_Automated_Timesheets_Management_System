@@ -44,7 +44,7 @@ git config --global user.email "you@example.com"
 
 Step 4: Clone the Project from GitHub
 Open GitHub and navigate to the repo:
-https://github.com/scubesoftsolutions/Scube_Automated_Timesheets_Management_System
+https://github.com/XcellIT-Project/Xcell_IT_Automated_Timesheets_Management_System
 Copy the HTTPS clone link.
 
 In PyCharm:
@@ -161,4 +161,4 @@ Testers	Test new features in test branch, validate bug fixes, ensure stability
 CI/CD Engineer	Manage deployments between cicd → pre-prod → main
 HR / PM	Approve final merges and monitor overall workflow
 
-Live Project Link: 
+Live Project Link: https://xcell-it-automated-timesheets-management.onrender.com/ 
