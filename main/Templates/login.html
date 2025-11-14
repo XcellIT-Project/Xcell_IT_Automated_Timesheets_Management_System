@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xcellit | Timesheet Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: radial-gradient(circle at top left, #0b0b0c, #111, #1a1a1a);
+    margin: 0;
+    color: #f1f1f1;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    backdrop-filter: blur(12px);
+    background: rgba(15, 15, 15, 0.6);
+    border-bottom: 1px solid rgba(255, 122, 0, 0.2);
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header img {
+    height: 55px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff7a00;
+  }
+
+  /* LOGIN CONTAINER */
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    background: radial-gradient(circle at center, rgba(255,122,0,0.15), transparent 70%);
+    animation: fadeIn 1s ease-in;
+  }
+
+  .login-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 122, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 16px;
+    padding: 45px;
+    box-shadow: 0 0 25px rgba(255, 122, 0, 0.15);
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    animation: slideUp 1s ease-out;
+  }
+
+  .login-card h2 {
+    color: #ff7a00;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  .login-card p {
+    color: #cfcfcf;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255,255,255,0.07);
+    color: #f1f1f1;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .form-control::placeholder {
+    color: #aaa;
+  }
+
+  .form-control:focus {
+    border-color: #ff7a00;
+    outline: none;
+    box-shadow: 0 0 6px rgba(255,122,0,0.4);
+  }
+
+  .login-btn {
+    background: linear-gradient(90deg, #ff7a00, #ff4800);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(255,122,0,0.4);
+    transition: all 0.3s ease;
+  }
+
+  .login-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255,122,0,0.7);
+  }
+
+  .error {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* FOOTER */
+  .footer {
+    text-align: center;
+    color: #999;
+    padding: 15px;
+    font-size: 0.85rem;
+    background: rgba(0, 0, 0, 0.85);
+    border-top: 1px solid rgba(255, 122, 0, 0.2);
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  @media (max-width: 768px) {
+    header { padding: 15px 25px; }
+    .login-card { margin: 0 15px; padding: 35px; }
+  }
+</style>
+</head>
+
+<body>
+<header>
+  <img src="https://xcellits.com/assets/img/logo.png" alt="Xcellit Logo">
+  <nav>
+    <a href="/">Home</a>
+    <a href="/login/">Login</a>
+    <a href="https://xcellits.com/contact-us.html" target="_blank">Main Website</a>
+  </nav>
+</header>
+
+<div class="login-container">
+  <div class="login-card">
+    <h2>Timesheet Login</h2>
+    <p>Access your company’s secure automated timesheet management system</p>
+
+    <form method="POST">
+      {% csrf_token %}
+      <input type="text" name="username" class="form-control" placeholder="Enter Username" required>
+      <input type="password" name="password" class="form-control" placeholder="Enter Password" required>
+      {% if error %}
+      <div class="error">{{ error }}</div>
+      {% endif %}
+      <button type="submit" class="login-btn">Login</button>
+    </form>
+  </div>
+</div>
+
+<div class="footer">
+  © 2025 Xcellit Inc. | Automated Timesheet Portal | <a href="https://xcellits.com" style="color:#ff7a00; text-decoration:none;">www.xcellits.com</a>
+</div>
+</body>
+</html>

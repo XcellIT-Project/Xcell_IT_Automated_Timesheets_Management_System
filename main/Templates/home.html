@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xcellit | Timesheet Portal</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- In-page CSS -->
+<style>
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: radial-gradient(circle at top left, #0b0b0c, #111, #1a1a1a);
+    color: #f1f1f1;
+    overflow-x: hidden;
+  }
+
+  /* HEADER */
+  header {
+    backdrop-filter: blur(12px);
+    background: rgba(15, 15, 15, 0.6);
+    border-bottom: 1px solid rgba(255, 122, 0, 0.2);
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  header img {
+    height: 55px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff7a00;
+  }
+
+  /* HERO SECTION */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 80px;
+    background: radial-gradient(circle at center, rgba(255,122,0,0.12), transparent 70%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+    opacity: 0.15;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+    z-index: 2;
+    animation: fadeInDown 1.2s ease-in-out;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    line-height: 1.7;
+    color: #cccccc;
+    z-index: 2;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .cta-btn {
+    margin-top: 40px;
+    background: linear-gradient(90deg, #ff7a00, #ff4800);
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 0 20px rgba(255,122,0,0.4);
+    transition: all 0.3s;
+    z-index: 2;
+    animation: fadeInUp 1.5s ease-in-out;
+  }
+
+  .cta-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255,122,0,0.7);
+  }
+
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ABOUT SECTION */
+  .about-section {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    padding: 80px 20px;
+    text-align: center;
+  }
+
+  .about-section h2 {
+    color: #ff7a00;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .about-section p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #d1d1d1;
+  }
+
+  /* FOOTER */
+  footer {
+    background: rgba(0,0,0,0.9);
+    color: #bbb;
+    text-align: center;
+    padding: 25px 10px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255,122,0,0.2);
+  }
+
+  footer a {
+    color: #ff7a00;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  footer a:hover {
+    color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 2.2rem; }
+    header { padding: 15px 20px; }
+  }
+</style>
+</head>
+
+<body>
+  <header>
+    <img src="https://xcellits.com/assets/img/logo.png" alt="Xcellit Logo">
+    <nav>
+      <a href="/">Home</a>
+      <a href="/login/">Login</a>
+      <a href="https://xcellits.com/contact-us.html" target="_blank">Main Website</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Welcome to Xcellit</h1>
+    <p>
+      Redefining innovation and efficiency through technology.
+      At <strong>Xcellit</strong>, we deliver intelligent digital solutions that transform businesses worldwide.
+      This <strong>Automated Timesheet Management System</strong> is designed to streamline team productivity,
+      enhance project tracking, and simplify time reporting — all under one secure platform.
+    </p>
+    <a href="/login/"><button class="cta-btn">Login to Timesheet Portal</button></a>
+  </section>
+
+  <section class="about-section">
+    <h2>About Xcellit</h2>
+    <p>
+      <strong>Xcellit</strong> is a next-generation technology solutions company delivering excellence in
+      software development, automation, and digital infrastructure.
+      Our mission is to empower organizations with intelligent tools and frameworks
+      that drive innovation, transparency, and efficiency.
+      The <strong>Timesheet Management Portal</strong> is a testament to our pursuit of operational excellence —
+      giving teams full control over time, tasks, and results.
+    </p>
+  </section>
+
+  <footer>
+    © 2025 Xcellit Inc. | All Rights Reserved |
+    <a href="https://xcellits.com" target="_blank">www.xcellits.com</a>
+  </footer>
+</body>
+</html>
